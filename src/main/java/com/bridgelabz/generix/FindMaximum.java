@@ -23,6 +23,17 @@ public class FindMaximum {
         }
         return max;
     }
+
+    public String findMaxString(String name1, String name2, String name3) {
+        String max = name1;
+        if (name2.compareTo(max) > 0) {
+            max = name2;
+        }
+        if (name3.compareTo(max) > 0) {
+            max = name3;
+        }
+        return max;
+    }
 }
 
 
