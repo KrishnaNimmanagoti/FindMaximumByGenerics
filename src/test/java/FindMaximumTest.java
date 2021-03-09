@@ -25,4 +25,11 @@ public class FindMaximumTest {
         Assertions.assertEquals(20.2f, findMaximum.findMaxFloat(10.3f, 2.4f, 20.2f));
     }
 
+    @Test
+    public void compareSting(){
+        Assertions.assertEquals("Mango", findMaximum.findMaxString("Mango", "Apple", "Grapes"));
+        Assertions.assertEquals("Mango", findMaximum.findMaxString("Apple", "Mango", "Grapes"));
+        Assertions.assertEquals("Mango", findMaximum.findMaxString("Apple", "Grapes", "Mango"));
+    }
+
 }
