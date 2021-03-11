@@ -1,27 +1,40 @@
 import com.bridgelabz.generix.FindMaximum;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.ArrayList;
 
 public class FindMaximumTest {
 
     @Test
-    public void compareIntegers(){
-        Assertions.assertEquals(20, new FindMaximum<>(20, 10, 2).maximum());
-        Assertions.assertEquals(20, new FindMaximum<>(10, 20, 2).maximum());
-        Assertions.assertEquals(20, new FindMaximum<>(10, 2, 20).maximum());
+    public void compare() {
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(1);
+        integers.add(2);
+        integers.add(3);
+        integers.add(4);
+        integers.add(5);
+        Assertions.assertEquals(5, new FindMaximum(integers).maximum());
     }
 
     @Test
     public void compareFloats(){
-        Assertions.assertEquals(20.2f, new FindMaximum<>(20.2f, 10.3f, 2.4f).maximum());
-        Assertions.assertEquals(20.2f, new FindMaximum<>(10.3f, 20.2f, 2.4f).maximum());
-        Assertions.assertEquals(20.2f, new FindMaximum<>(10.3f, 2.4f, 20.2f).maximum());
+        ArrayList<Float> floats = new ArrayList<>();
+        floats.add(20.4f);
+        floats.add(35.f);
+        floats.add(12.33f);
+        floats.add(49.9f);
+        floats.add(5.6f);
+        Assertions.assertEquals(49.9f, new FindMaximum(floats).maximum());
     }
 
     @Test
     public void compareSting(){
-        Assertions.assertEquals("Mango", new FindMaximum<>("Mango", "Apple", "Grapes").maximum());
-        Assertions.assertEquals("Mango", new FindMaximum<>("Apple", "Mango", "Grapes").maximum());
-        Assertions.assertEquals("Mango", new FindMaximum<>("Apple", "Grapes", "Mango").maximum());
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("apple");
+        strings.add("mango");
+        strings.add("grapes");
+        strings.add("pineapple");
+        strings.add("banana");
+        Assertions.assertEquals("pineapple", new FindMaximum(strings).maximum());
     }
 }
