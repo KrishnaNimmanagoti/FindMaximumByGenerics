@@ -1,29 +1,21 @@
 package com.bridgelabz.generix;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class FindMaximum <T extends Comparable<T>> {
+    ArrayList<T> a;
 
-    T value1, value2, value3;
-
-    public FindMaximum(T value1, T value2, T value3){
-        this.value1 = value1;
-        this.value2 = value2;
-        this.value3 = value3;
+    public FindMaximum(ArrayList<T> a) {
+        this.a = a;
     }
 
     public T maximum(){
-        return FindMaximum.maximum(value1, value2, value3);
+        return FindMaximum.maximum(a);
     }
 
-    public static <T extends Comparable <T>> T maximum(T value1, T value2, T value3) {
-        T max = value1;
-        if (value2.compareTo(max) > 0) {
-            max = value2;
-        }
-        if (value3.compareTo(max) > 0) {
-            max = value3;
-        }
-        return max;
+    public static <T extends Comparable <T>> T maximum(ArrayList<T> a) {
+        Collections.sort(a);
+        return (T) Collections.max(a);
     }
 }
-
-
