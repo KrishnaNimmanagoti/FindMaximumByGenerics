@@ -14,8 +14,14 @@ public class FindMaximum <T extends Comparable<T>> {
         return FindMaximum.maximum(a);
     }
 
+    public static <T> void printMax(T a, T max) {
+        System.out.printf("Max of %s is %s\n",a,max);
+    }
+
     public static <T extends Comparable <T>> T maximum(ArrayList<T> a) {
         Collections.sort(a);
-        return (T) Collections.max(a);
+        T max = Collections.max(a);
+        printMax(a, max);
+        return max;
     }
 }
